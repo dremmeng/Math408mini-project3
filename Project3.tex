@@ -83,11 +83,21 @@
 	\item
 		\begin{equation*}
 		\begin{split}
-			\tau^{n} = \frac{2}{3}*\frac{3}{4} \mathcal{O}(h^{2}) = \frac{1}{2}\mathcal{O}(h^{2}), c_{2} = \frac{2}{3} \\ 
-			\tau^{n} = \frac{1}{2}*\frac{1}{2} \mathcal{O}(h^{2}) = \frac{1}{4}\mathcal{O}(h^{2}), c_{2} = \frac{1}{2} 
+			U^{n+1} & = U^{n} +  \frac{k}{4} V_{1} +\frac{3k}{4} V_{2} \\
+			V_{1} &= f(t,u) \\
+			V_{2} & = f(t+ \frac{2k}{3}, u + \frac{2k}{3} f(t,u)) \\ 
+			\tau^{n} & = \frac{u(t_{n+1}) - u(t_{n})}{k} - f(u(t_{n})+ \frac{k}{2}f(u(t_{n}))) \\
+			\tau^{n} &= \frac{1}{4}\mathcal{O}(h^{2}) + \frac{2}{3}\frac{3}{4}\mathcal{O}(h^{2}) \\
+			\tau^{n} & = \frac{3}{4}\mathcal{O}(h^{2}), c_{2} = \frac{2}{3} \\ 
+			U^{n+1} & = U^{n} +  \frac{k}{2} V_{1} +\frac{k}{2} V_{2} \\
+			V_{1} &= f(t,u) \\
+			V_{2} & = f(t+ \frac{k}{2}, u + \frac{k}{2} f(t,u)) \\ 
+			\tau^{n} & = \frac{u(t_{n+1}) - u(t_{n})}{k} - f(u(t_{n})+ \frac{k}{2}f(u(t_{n}))) \\
+			\tau^{n} &= \frac{1}{2}\mathcal{O}(h^{2}) + \frac{1}{2}\frac{1}{2}\mathcal{O}(h^{2}) \\
+			\tau^{n} & = \frac{3}{4}\mathcal{O}(h^{2}), c_{2} = \frac{1}{2} \\ 
 		\end{split}
 		\end{equation*}
-		The error is smaller for the midpoint method. 
+		The error has the same coefficient. 
 	\end{enumerate}
 \item
 	\begin{equation*}
@@ -182,7 +192,7 @@ Not zero stable
 \begin{enumerate}
 \item
 \item
-The errors trend towards $\mathcal{O}(h^{2})$
+The errors trend towards $\frac{3}{4}\mathcal{O}(h^{2})$ 
 \end{enumerate}
 \end{enumerate}
 
